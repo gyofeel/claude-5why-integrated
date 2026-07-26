@@ -1,7 +1,7 @@
 {
   "name": "5why-integrated",
   "version": "0.1.2",
-  "description": "Extended integrated 5 Why root cause analysis: 5W2H framing, Fishbone/6M cause expansion, parallel multi-path 5 Whys, FMEA risk prioritization (RPN), and evidence-based verification, producing a Markdown or interactive HTML report.",
+  "description": "Extended integrated 5 Why root cause analysis: 5W2H framing, Fishbone/6M cause expansion, parallel multi-path 5 Whys, FMEA risk prioritization (RPN), and evidence-based verification, producing a Markdown, PDF, or custom-described report.",
   "author": {
     "name": "gyofeel"
   },

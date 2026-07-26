@@ -11,7 +11,7 @@ You describe a problem and the skill walks you through it one question at a time
 - **No single-path bias** — causes are brainstormed across independent Fishbone categories before any Why-chain starts, instead of picking one and drilling down blind.
 - **No guessed root cause** — every top-RPN candidate is checked against frequency data, timing match, and condition contrast before it becomes a corrective action.
 - **Prioritized, not just listed** — FMEA (Severity/Occurrence/Detection → RPN) ranks root-cause candidates instead of treating them as equally important.
-- **You pick the output** — right before generating, it asks for a Markdown report or an interactive HTML page, so the deliverable fits how you'll use it.
+- **You pick the output** — right before generating, it asks for a Markdown report, a PDF, or a format you describe yourself, so the deliverable fits how you'll use it.
 
 ## Pipeline
 
@@ -20,7 +20,7 @@ You describe a problem and the skill walks you through it one question at a time
 3. **Parallel multi-path 5 Why** — an independent Why-chain per candidate cause, stopping at an actionable, verifiable root cause instead of forcing exactly 5 levels.
 4. **FMEA scoring** — narrow to priority candidates, score Severity/Occurrence/Detection (1–10 anchored scale), rank by RPN.
 5. **Verification & corrective-action design** — check frequency/timing/condition evidence for top-RPN causes before designing fixes.
-6. **Deliverable** — choose a Markdown report or an interactive HTML artifact; it generates and hands back the location.
+6. **Deliverable** — choose a Markdown report, a PDF, or a format you describe (e.g. interactive HTML); it generates and hands back the location.
 
 ## Install
 
@@ -38,7 +38,7 @@ skills/5why-integrated/
 ├── SKILL.md
 └── references/
     ├── method.md            # 5W2H/6M/FMEA theory + scoring anchors + verification checklist
-    └── output-templates.md  # Markdown report skeleton + HTML build guide
+    └── output-templates.md  # Markdown/PDF report skeleton + custom-format (e.g. HTML) build guide
 ```
 
 ## License

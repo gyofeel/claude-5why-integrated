@@ -5,8 +5,8 @@ description: >
   space with a Fishbone/6M diagram, traces root-cause candidates through parallel
   multi-path 5 Whys per category, prioritizes them with FMEA (RPN), verifies with
   evidence, and drives corrective-action design — the extended integrated 5 Why
-  methodology. Produces a Markdown report or an interactive HTML artifact. Use when
-  the user says things like "run an integrated 5 Why analysis", "help me find the
+  methodology. Produces a Markdown report, a PDF, or a format the user describes.
+  Use when the user says things like "run an integrated 5 Why analysis", "help me find the
   root cause", "let's fishbone this", "prioritize with FMEA", "why is this problem
   happening", "/5why-integrated", or otherwise signals they want to dig into a root
   cause systematically.
@@ -103,17 +103,23 @@ AskUserQuestion):
 - ⓐ **Markdown report** — a `.md` containing 5W2H, Fishbone (mermaid), the
   parallel 5 Why table, the FMEA (RPN) table, verification evidence, and
   corrective-action design
-- ⓑ **Interactive HTML** — a web page (Artifact) visualizing the fishbone,
-  the FMEA RPN chart, and verification badges
+- ⓑ **PDF document** — the same report as a print-ready PDF
+- **Other (describe it)** — if neither of the above fits, use
+  AskUserQuestion's "Other" to take a described format (e.g. interactive
+  HTML, slides)
 
 Fill in the matching skeleton from `references/output-templates.md`, following its
 **writing-style principles** (write in the user's own language, avoid stiff
 literal-translation phrasing, use complete narrative sentences instead of arrow
 chains, add a short friendly intro/lead-in per section) — the output is
 something the user reads and acts on, not a data dump:
-- **ⓐ chosen** → save a `.md` file following the template.
-- **ⓑ chosen** → load the `artifact-design` skill first, then deploy the HTML
-  via the Artifact tool.
+- **ⓐ Markdown** → save a `.md` file following the template.
+- **ⓑ PDF** → assemble the content with the Markdown skeleton first, then
+  convert to PDF (`pandoc` if available; otherwise render to HTML and print
+  to PDF). Save as `.pdf`.
+- **Other** → generate in the format the user described (e.g. for interactive
+  HTML, load the `artifact-design` skill first, then publish via the
+  Artifact tool).
 
 After generating, tell the user where the output was saved (path or URL).
 

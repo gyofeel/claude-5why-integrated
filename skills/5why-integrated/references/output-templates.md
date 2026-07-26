@@ -113,7 +113,26 @@ can stay in English, but the label text should read naturally in the user's lang
 
 ---
 
-## ⓑ Interactive HTML (Artifact)
+## ⓑ PDF Document
+
+Assemble the content with the ⓐ Markdown skeleton first, then convert to PDF.
+
+**Conversion (use whichever is available)**
+- `pandoc report.md -o report.pdf` (simplest when an engine is present).
+- If pandoc isn't available: render the markdown to simple HTML, then print to PDF via a
+  headless browser.
+- If the fishbone mermaid diagram doesn't render in the PDF, fall back to a text/table form
+  of the same tree.
+
+Save as `{topic}-5why-integrated-analysis.pdf`.
+
+---
+
+## Other (user-described)
+
+If the user describes a format other than the two above, generate to match. A common example:
+
+### Interactive HTML (Artifact)
 
 Load the `artifact-design` skill first, then build it, and deploy via the Artifact tool. The
 "Writing-Style Principles" above apply equally to the copy inside cards and badges — don't
