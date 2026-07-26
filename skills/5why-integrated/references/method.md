@@ -1,87 +1,96 @@
-# 확장형 5 Why 통합방법론 레퍼런스
+# Extended Integrated 5 Why Methodology Reference
 
-> 원전: `studio_tool/documents/5why-expanded/5why-통합방법론.md` (5W2H → 피시본/6M → 표형식
-> 병렬 5Why → FMEA/RPN → 데이터검증·대응설계, 5단계 통합 이론)
+> Source: `studio_tool/documents/5why-expanded/5why-통합방법론.md` (5W2H → Fishbone/6M →
+> tabular parallel 5 Why → FMEA/RPN → data-driven verification & corrective-action design,
+> a 5-stage integrated theory)
 
-스킬이 분석 각 단계에서 참조하는 이론·체크리스트·척도표. 사용자에게 그대로 노출하지 말고,
-판단 기준으로만 사용한다.
+Theory, checklists, and scoring anchors this skill consults at each analysis step. Never
+expose this verbatim to the user — use it only as internal judgment criteria.
 
-## 1. 왜 5 Why 단독으로 안 되는가
+## 1. Why 5 Why Alone Isn't Enough
 
-- Card(2016)의 핵심 비판: "다섯 번째 왜의 깊이는 임의적 — 근본원인과 상관관계 없음", "재현성
-  없음 — 사람마다 다른 원인을 골라냄". 이 스킬의 각 단계는 이 두 결함을 직접 겨냥한다.
-- 단일 경로 편향(하나의 원인만 우연히 골라내는 문제) → 2단계(피시본/6M)가 폭을 담당해 보완.
-- 재현성 부족(복수 근본원인 존재 가능) → 3단계(표형식 병렬 추적)가 보완.
-- 원인 우선순위 부재 → 4단계(FMEA/RPN)가 보완.
-- 근본원인 추측성 확정 → 5단계(데이터 기반 검증)가 보완.
-- 학계 실증: 이런 결합조차 표준화된 검증 절차 없이는 절반 가까운 사례에서 일관된 인과관계를
-  못 얻는다는 지적이 있음 — 따라서 검증 단계(5단계)를 절대 생략하거나 형식적으로 넘기지 않는다.
-  사용자가 서두르며 "그냥 이걸로 하자"고 해도, 최소한 뒷받침 데이터 유무는 확인하고 넘어간다.
+- Card's (2016) core critique: "the depth of the fifth why is arbitrary — it has no
+  correlation with the actual root cause," and "results aren't reproducible — different
+  people land on different causes." Every step of this skill directly targets these two flaws.
+- Single-path bias (accidentally picking just one cause) → Step 2 (Fishbone/6M) compensates by covering breadth.
+- Lack of reproducibility (multiple root causes may coexist) → Step 3 (tabular parallel tracking) compensates.
+- No prioritization among causes → Step 4 (FMEA/RPN) compensates.
+- Speculative confirmation of a root cause → Step 5 (data-driven verification) compensates.
+- Academic evidence: even this combination, without a standardized verification procedure,
+  reportedly fails to establish a consistent causal relationship in nearly half of cases —
+  so the verification step (Step 5) must never be skipped or treated as a formality. Even if
+  the user is in a hurry and says "let's just go with this," at minimum confirm whether
+  supporting data exists before moving on.
 
-## 2. 5W2H 7요소 (문제 프레이밍)
+## 2. The 7 Elements of 5W2H (Problem Framing)
 
-각 요소를 하나씩 묻는다. 사용자가 문제 상황을 던질 때 이미 답한 요소는 재질문하지 않는다.
+Ask each element one at a time. If the user already answered an element while describing
+the problem, don't ask it again.
 
-- **What**: 무엇이 문제인가? (증상을 구체적으로 — "품질이 나쁘다" 대신 "불량률이 X%로 상승")
-- **Where**: 어디서 발생하는가? (공정/부서/시스템/화면 등 위치)
-- **When**: 언제부터, 얼마나 자주 발생하는가?
-- **Who**: 누가 발견했나 / 누가 영향을 받는가?
-- **Why(중요성)**: 왜 지금 이 문제를 다뤄야 하는가? (방치 시 영향)
-- **How**: 어떻게 발견/관찰됐는가? (측정 방법, 발견 경위)
-- **How much**: 규모는? (빈도, 비용, 영향받는 건수·인원 등)
+- **What**: What is the problem? (Be specific about the symptom — "quality is bad" vs. "defect rate rose to X%")
+- **Where**: Where does it occur? (process/department/system/screen, etc.)
+- **When**: Since when, and how often does it happen?
+- **Who**: Who discovered it / who is affected?
+- **Why (significance)**: Why does this need to be addressed now? (impact if left unaddressed)
+- **How**: How was it discovered/observed? (measurement method, discovery circumstances)
+- **How much**: What's the scale? (frequency, cost, number of cases/people affected, etc.)
 
-7개 다 받으면 문제 진술문 한 단락으로 재확인: *"OO에서, XX 시점부터, YY 규모로 발생 중인
-문제 — 맞나요?"*
+Once all 7 are collected, read back a one-paragraph problem statement for confirmation:
+*"In X, since Y, at Z scale — is that right?"*
 
-## 3. 피시본 6M 범주 (원인 공간 확장)
+## 3. The Fishbone 6M Categories (Cause-Space Expansion)
 
-- **Man(인력)**: 숙련도, 교육, 절차 미준수, 커뮤니케이션
-- **Machine(설비)**: 장비 노후·고장, 설정 오류, 유지보수 미흡
-- **Material(자재)**: 원자재 품질, 공급업체 변동, 규격 불일치
-- **Method(방법)**: 작업 절차, 표준 부재/오류, 워크플로 설계
-- **Measurement(측정)**: 측정 도구 오차, 검사 기준 불명확, 데이터 수집 오류
-- **Environment(환경)**: 온습도 등 물리 환경, 조직문화, 외부 규제/시장 변화
+- **Man**: skill level, training, procedure non-compliance, communication
+- **Machine**: equipment aging/failure, misconfiguration, insufficient maintenance
+- **Material**: raw material quality, supplier variation, spec mismatches
+- **Method**: work procedures, missing/faulty standards, workflow design
+- **Measurement**: measuring-tool error, unclear inspection criteria, data-collection errors
+- **Environment**: physical environment (temperature/humidity, etc.), organizational culture, external regulation/market shifts
 
-전 범주 강제 아님 — 무관하다고 판단되면 사용자에게 확인 후 스킵 가능(mece의 "카테고리
-2~5개" 인지부하 원칙 준용). 단, "그냥 하나만 보고 끝내자"는 판단은 이 스킬의 존재 이유(단일
-경로 편향 방지)를 무력화하므로, 최소 2개 이상 범주는 짚고 넘어가도록 유도한다.
+Covering every category isn't mandatory — if a category is clearly irrelevant, it can be
+skipped after confirming with the user (following the same cognitive-load principle as
+mece's "2–5 categories"). However, deciding to look at just one category defeats this
+skill's whole reason for existing (preventing single-path bias), so encourage covering at
+least 2 categories.
 
-## 4. Actionable Root Cause 종료 기준 (다중경로 5Why)
+## 4. Actionable-Root-Cause Stopping Criteria (Parallel Multi-Path 5 Why)
 
-각 원인 후보별로 "왜?"를 반복하되, **고정된 5단계를 강제하지 않는다.** 아래 조건을 만족하면
-그 사슬은 종료:
+Repeat "why?" for each candidate cause, but **do not force a fixed 5 levels.** End a chain
+once it meets any of these conditions:
 
-- 더 이상의 "왜"가 조직이 통제할 수 있는 범위를 벗어난다 (예: "경기 침체 때문에" 이상은 팔
-  수 없음)
-- 원인이 구체적 행동으로 교정 가능한 수준까지 내려왔다 (프로세스 변경, 교육, 설비 교체 등)
-- 원인이 데이터로 검증 가능한 형태다 (빈도·시점·조건을 특정할 수 있음)
+- Any further "why" would fall outside what the organization can control (e.g., nothing
+  beyond "because of the economic downturn" can be acted on)
+- The cause has reached a level correctable by a concrete action (process change, training,
+  equipment replacement, etc.)
+- The cause is in a form verifiable with data (frequency, timing, and conditions can be specified)
 
-너무 일찍 멈추면(표면 증상 수준) 계속 파고들도록 유도하고, 근거 없이 조직 밖 요인으로
-도피하면("그냥 운이 나빴다") 되돌려서 한 단계 더 묻는다.
+If a chain stops too early (still at a surface symptom), push it further. If it escapes to
+an unsubstantiated external factor ("just bad luck") with no evidence, pull it back and ask
+one more why.
 
-## 5. FMEA 1-10 척도 앵커표 (AIAG 스타일 축약, 4단계)
+## 5. FMEA 1–10 Scoring Anchors (AIAG-style, abbreviated to 4 tiers)
 
-대화 중 점수를 매길 때 아래 기준점을 사용자에게 짧게 제시하고, 사용자 판단으로 확정한다.
-임의로 스킬이 혼자 점수를 매기지 않는다. AskUserQuestion 옵션은 4개까지만 가능해 4단계로
-축약했다 — 표는 1-10 척도 그대로 유지(중간값은 사용자가 "그 사이 정도"라고 하면 근접한
-값으로 조정).
+When scoring during the conversation, briefly present these anchor points to the user and
+let the user's judgment finalize the score — never assign scores unilaterally. AskUserQuestion
+only allows up to 4 options, hence the 4-tier abbreviation — the underlying scale is still
+1–10 (if the user says "somewhere in between," round to the nearest anchor).
 
-| 점수 | Severity (심각도) | Occurrence (발생빈도) | Detection (검출도, 낮을수록 위험) |
+| Score | Severity | Occurrence | Detection (lower = riskier) |
 |---|---|---|---|
-| 1 | 영향 거의 없음 | 거의 발생 안 함 (연 1회 미만) | 사전에 거의 확실히 검출됨 |
-| 4 | 경미~눈에 띄는 손실/불만 발생 | 가끔~종종 발생 (분기~월 1회 수준) | 검출 여부가 반반 |
-| 7 | 심각한 손실, 고객/업무 영향 큼 | 자주 발생 (주 1회 수준) | 검출 어려움, 대부분 사후 발견 |
-| 10 | 안전/법규/치명적 손실 | 상시 발생 (거의 매번) | 사실상 검출 불가능, 발생 전 알 방법 없음 |
+| 1 | Little to no impact | Rarely happens (less than once a year) | Almost certainly caught beforehand |
+| 4 | Minor to noticeable loss/complaint | Occasional to frequent (roughly quarterly to monthly) | Coin-flip odds of being caught |
+| 7 | Serious loss, major impact on customers/operations | Frequent (roughly weekly) | Hard to detect, mostly discovered after the fact |
+| 10 | Safety/regulatory/catastrophic loss | Constant (nearly every time) | Essentially undetectable, no way to know before it happens |
 
-RPN = Severity × Occurrence × Detection (최대 1000). RPN 높은 순으로 우선순위를 매긴다.
-동일 RPN이면 Severity가 높은 쪽을 우선.
+RPN = Severity × Occurrence × Detection (max 1000). Rank causes by descending RPN. If RPN
+ties, prioritize the one with the higher Severity.
 
-## 6. 검증 단계 체크리스트
+## 6. Verification-Step Checklist
 
-RPN 상위 원인에 대해, 대응설계로 넘어가기 전 반드시 확인:
+For top-RPN causes, confirm all of the following before moving to corrective-action design:
 
-- 이 원인이 실제로 발생했다는 **빈도 데이터**가 있는가?
-- 문제가 발생한 **시점**과 이 원인의 발생 시점이 일치하는가?
-- 이 원인이 있을 때와 없을 때의 **조건 차이**가 설명되는가?
-- 위 세 가지 중 하나도 확인 안 되면 "추측"으로 간주 — 대응설계 전에 데이터 확보 방법부터
-  논의한다 (바로 교정조치로 넘어가지 않는다).
+- Is there **frequency data** showing this cause actually occurred?
+- Does the **timing** of this cause's occurrences line up with when the problem occurred?
+- Can the **condition contrast** be explained (what's different when this cause is present vs. absent)?
+- If even one of the above three can't be confirmed, treat the cause as speculative —
+  discuss how to gather data before designing corrective action (don't jump straight to it).

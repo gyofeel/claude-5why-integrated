@@ -1,127 +1,140 @@
-# 산출물 템플릿
+# Output Templates
 
-산출물 선택 스텝(6단계)에서 사용자가 고른 형식에 따라 아래 골격을 채운다.
+At the output-selection step (Step 6), fill in the skeleton below matching the format the
+user chose.
 
-## 작성 원칙 (번역체 방지, 자연스러운 문장)
+## Writing-Style Principles (avoid literal-translation phrasing, write naturally)
 
-산출물은 분석 도구가 아니라 **사용자에게 전달되는 글**이다. 아래 원칙을 반드시 지킨다 —
-데이터가 맞아도 표현이 딱딱하거나 번역체면 산출물 가치가 떨어진다.
+The output is **something written for the user to read**, not an analysis tool dump. Follow
+these principles without exception — even correct data loses its value if the phrasing is
+stiff or reads like a literal translation.
 
-- **라벨을 영문 그대로 쓰지 않는다.** `method.md`의 5W2H·6M 항목명(What/Where/Man/Machine 등)은
-  내부 판단용 이름일 뿐, 산출물에는 사용자 언어로 자연스럽게 바꿔 쓴다. 예(한국어 사용자):
-  What→"무엇이", Where→"어디서", Man→"사람", Environment→"환경". 사용자가 다른 언어를 쓰면
-  그 언어의 자연스러운 표현으로(기계적 직역 금지).
-- **화살표·기호 연쇄 대신 문장으로 서술한다.** `A → B → C` 식 나열은 읽는 사람이 다시 해석해야
-  한다. "왜 그런지 물어보니 ~ 때문이었습니다" 처럼 원인이 이어지는 과정을 서술형 문장으로 풀어쓴다.
-- **각 섹션 시작에 짧은 안내문을 둔다.** 왜 이 단계를 거치는지 1~2문장으로 자연스럽게 이어,
-  섹션과 섹션 사이가 뚝뚝 끊기지 않게 한다.
-- **친절한 톤을 쓴다.** 딱딱한 보고서체보다 사용자에게 직접 설명하듯 쓴다. 도입부에 이 리포트가
-  무엇을 위한 것인지 짧게 인사하듯 열고, 마무리에는 다음에 뭘 하면 좋을지 격려하듯 닫는다.
-- **표 헤더도 자연어로.** Severity/Occurrence/Detection/RPN 같은 용어는 "심각도/발생빈도/발견
-  난이도/위험도"처럼 사용자 언어로 옮기고, 필요하면 괄호로 원어를 한 번만 병기한다.
-- **기각된 원인도 무시하지 않는다.** 검증에서 기각된 후보는 왜 아니었는지, 실제로는 어떤 원인과
-  겹치는지 한 문장으로 짚어준다 — 사용자가 "이건 어떻게 됐지"라고 다시 묻지 않도록.
+- **Don't use the English labels verbatim.** The 5W2H / 6M item names in `method.md`
+  (What/Where/Man/Machine, etc.) are internal judgment labels only. In the output, rephrase
+  them naturally in the user's own language — not a mechanical word-for-word translation. If
+  the user writes in English, still prefer a natural phrasing over the bare category name
+  (e.g., "What's going on" rather than a bare "What").
+- **Write as narrative sentences, not arrow/symbol chains.** A list like `A → B → C` forces
+  the reader to re-interpret it. Spell out the causal chain as flowing sentences — e.g., "We
+  asked why, and it turned out to be because ..." — instead.
+- **Open each section with a short lead-in.** One or two natural sentences on why this step
+  exists, so sections don't feel disconnected from each other.
+- **Use a friendly tone.** Write as if explaining directly to the user, not in a stiff report
+  register. Open with a brief, welcoming line about what the report is for, and close with an
+  encouraging note on what to do next.
+- **Table headers in natural language too.** Terms like Severity/Occurrence/Detection/RPN
+  should be rendered in the user's language (e.g., "severity / how often / how hard to
+  catch / risk score"), with the original term parenthesized once if useful.
+- **Don't drop rejected causes silently.** For any candidate that verification rejected,
+  note in one sentence why it wasn't the real cause and which surviving cause it folds into
+  — so the user never has to ask "wait, what happened to that one?"
 
 ---
 
-## ⓐ Markdown 리포트
+## ⓐ Markdown Report
 
-`{주제}-5Why통합분석.md` 로 저장(작업 폴더 또는 사용자가 지정한 위치). 아래 섹션 순서와
-서술형 톤을 유지하되, 라벨·문장은 위 작성 원칙에 따라 사용자 언어로 자연스럽게 옮긴다.
+Save as `{topic}-5why-integrated-analysis.md` (in the working folder, or wherever the user
+specifies). Keep the section order and narrative tone below, but render every label and
+sentence naturally in the user's own language per the writing-style principles above — the
+English text here is an illustrative example, not fixed wording to copy.
 
 ```markdown
-# {주제} — 5Why 통합분석 리포트
+# {topic} — Integrated 5 Why Analysis Report
 
-{이 리포트가 무엇을 위한 것인지 한두 문장으로 친근하게 여는 인사}
+{One or two friendly opening sentences on what this report is for}
 
-## 1. 어떤 문제인가요 (5W2H)
+## 1. What's the Problem? (5W2H)
 
-| 항목 | 내용 |
+| Item | Details |
 |---|---|
-| 무엇이 | {…} |
-| 어디서 | {…} |
-| 언제부터 · 얼마나 자주 | {…} |
-| 누가 | {…} |
-| 왜 중요한가 | {…} |
-| 어떻게 | {…} |
-| 어느 정도인가 | {…} |
+| What's going on | {…} |
+| Where | {…} |
+| Since when · how often | {…} |
+| Who | {…} |
+| Why it matters | {…} |
+| How it happens | {…} |
+| How big a deal | {…} |
 
-## 2. 원인이 될 만한 것들을 넓게 살펴보기 (피시본/6M)
+## 2. Casting a Wide Net for Causes (Fishbone/6M)
 
-{왜 한 방향으로만 파지 않고 여러 범주를 살펴봤는지 한 문장}
+{One sentence on why several categories were explored instead of drilling into just one}
 
 ```mermaid
 graph LR
-    P[{문제}]
-    Man[사람] --> P
-    Method[방법] --> P
-    Measurement[측정] --> P
-    Environment[환경] --> P
-    Man1["{원인 후보를 자연스러운 문장으로}"] --> Man
-    Method1["{원인 후보}"] --> Method
+    P[{the problem}]
+    Man[People] --> P
+    Method[Method] --> P
+    Measurement[Measurement] --> P
+    Environment[Environment] --> P
+    Man1["{cause candidate, as a natural phrase}"] --> Man
+    Method1["{cause candidate}"] --> Method
 ```
 
-(브레인스토밍한 범주만 포함, 스킵한 범주는 제외. 노드 id는 영문이어도 되지만 라벨 텍스트는
-사용자 언어의 자연스러운 표현으로)
+(Include only the categories actually brainstormed; omit any that were skipped. Node ids
+can stay in English, but the label text should read naturally in the user's language.)
 
-## 3. 각 원인을 "왜?"로 한 번 더 파고들기
+## 3. Digging Into Each Cause with "Why?"
 
-{표면적 이유에 머물지 않고 실제 손쓸 수 있는 지점까지 내려갔다는 걸 한 문장으로}
+{One sentence noting these went past surface symptoms down to something actionable}
 
-| 관점 | 원인을 따라간 과정 | 최종적으로 찾은 근본원인 |
+| Angle | How we traced it | Root cause we landed on |
 |---|---|---|
-| {범주} | {증상에서 시작해 "왜 그런지 물어보니 ~ 때문이었습니다"를 반복하는 서술형 문장. 더 파도 통제 불가능한 지점(성격 등)에 닿으면 그 이유를 짧게 밝히고 멈춘다} | {actionable cause를 완결된 문장으로} |
-| {범주, 검증 후 기각된 경우} | {…} | (실제 원인이 아닌 것으로 확인 — 어떤 원인에 통합되는지 명시) |
+| {category} | {Narrative sentences repeating "we asked why, and it turned out ..." from the symptom down. If a chain hits something uncontrollable (e.g., personality), say so briefly and stop there.} | {the actionable cause, as a complete sentence} |
+| {category, rejected after verification} | {…} | (confirmed not to be the real cause — state which cause it folds into) |
 
-## 4. 어떤 원인부터 손봐야 할까 (FMEA 우선순위)
+## 4. Which Cause to Tackle First (FMEA Priority)
 
-{점수를 매겨 우선순위를 정했다는 걸 한 문장으로 — 점수가 뭘 뜻하는지도 짧게}
+{One sentence on why these got scored and ranked — and briefly what the score means}
 
-| 근본원인 | 심각도 | 발생빈도 | 발견 난이도 | 위험도(RPN) | 순위 |
+| Root cause | Severity | How often | How hard to catch | Risk score (RPN) | Rank |
 |---|---|---|---|---|---|
-| {…} | {1-10} | {1-10} | {1-10} | {S×O×D} | 1순위 |
-| {…} | {1-10} | {1-10} | {1-10} | {S×O×D} | 2순위 |
+| {…} | {1–10} | {1–10} | {1–10} | {S×O×D} | #1 |
+| {…} | {1–10} | {1–10} | {1–10} | {S×O×D} | #2 |
 
-## 5. 정말 맞는 원인인지 확인해보기
+## 5. Checking Whether It's Really the Cause
 
-{짐작만으로 결론 내리지 않기 위한 단계라는 걸 한 문장으로}
+{One sentence on why this step exists — to avoid confirming a cause on a guess}
 
-| 원인 | 실제로 얼마나 자주 그랬나 | 문제 시점과 맞아떨어지나 | 반대 상황에선 괜찮았나 | 결론 |
+| Cause | How often it actually happened | Does the timing line up? | Does it differ with/without this cause? | Verdict |
 |---|---|---|---|---|
-| {…} | {…} | {…} | {…} | ✅ 실제 원인으로 확인 / ⚠️ 추가 근거 필요 / ⚠️ 원인이 아닌 것으로 확인 |
+| {…} | {…} | {…} | {…} | ✅ Confirmed / ⚠️ Needs more evidence / ⚠️ Not the real cause |
 
-## 6. 그래서 무엇을 하면 좋을까
+## 6. So, What Should We Do?
 
-{우선순위 순으로, 함께 정한 대응 방법이라는 걸 한 문장으로}
+{One sentence noting these are the corrective actions agreed on, in priority order}
 
-**1순위 — {원인} (위험도 {RPN})**
-- **{조치명}**: {왜 이게 도움이 되는지까지 자연스러운 문장으로}
+**#1 — {cause} (risk score {RPN})**
+- **{action name}**: {a natural sentence on why this helps}
 
-**참고로 함께 짚어둘 점**
-- {기각된 원인이 왜 아니었는지, 실제로는 어디로 통합되는지}
-- {우선순위에서 제외된 원인이 있다면, 나중에 다시 살펴볼 수 있다고 안내}
+**Also worth noting**
+- {why any rejected cause wasn't it, and which surviving cause it folds into}
+- {if any cause was set aside from scoring, mention it can be revisited later}
 ```
 
 ---
 
-## ⓑ 인터랙티브 HTML (Artifact)
+## ⓑ Interactive HTML (Artifact)
 
-`artifact-design` 스킬을 먼저 로드한 뒤 작성. Artifact 도구로 배포. 위 "작성 원칙"은 카드·배지
-안의 문구에도 동일하게 적용한다 — 라벨을 영문 약어 그대로 노출하지 않고, 짧더라도 자연스러운
-문장/구로 쓴다.
+Load the `artifact-design` skill first, then build it, and deploy via the Artifact tool. The
+"Writing-Style Principles" above apply equally to the copy inside cards and badges — don't
+expose raw English abbreviations as labels; write short but natural phrases instead.
 
-**필수 구성 요소**
-1. **문제정의 카드**: 5W2H 7요소를 카드/표로 표시(라벨은 자연어로).
-2. **피시본 다이어그램**: mermaid가 아닌 커스텀 CSS/SVG로 실제 생선뼈 모양 구현 — 중앙 스파인
-   에서 범주가 대각선 가지로 뻗고, 각 가지에 원인 후보를 자식 노드로 배치. 범주명도 자연어로.
-3. **다중경로 5Why 트리/표**: 범주별 사슬을 아코디언 또는 표로, 화살표 나열이 아니라 짧은
-   서술형 문장으로. 마지막 노드(근본원인 후보)를 강조.
-4. **FMEA 위험도 정렬 바 차트 또는 표**: 위험도(RPN) 내림차순, 상위 항목 강조색. 심각도·발생
-   빈도·발견난이도 개별 값도 자연어 라벨로 표시.
-5. **검증 배지**: 원인별 ✅(확인됨) / ⚠️(추가 근거 필요 또는 원인 아님) 배지 + 짧은 이유 문구.
+**Required components**
+1. **Problem-definition card**: show the 5W2H elements as cards/a table (labels in natural language).
+2. **Fishbone diagram**: build the actual fishbone shape with custom CSS/SVG (not mermaid) —
+   categories branch diagonally off a central spine, with cause candidates as child nodes on
+   each branch. Category names in natural language too.
+3. **Parallel 5 Why tree/table**: category chains as an accordion or table, written as short
+   narrative sentences rather than arrow lists. Highlight the terminal node (root-cause candidate).
+4. **FMEA risk-score sorted bar chart or table**: sorted descending by risk score (RPN), with
+   top items highlighted. Show the individual severity/occurrence/detection values with
+   natural-language labels too.
+5. **Verification badges**: per cause, a ✅ (confirmed) / ⚠️ (needs more evidence, or not the
+   cause) badge plus a short reason.
 
-**스타일 규칙**
-- self-contained: 모든 CSS/JS 인라인, 외부 요청 금지.
-- 라이트/다크 테마 양쪽 대응(`prefers-color-scheme` + `data-theme`).
-- 반응형: 표·다이어그램은 `overflow-x:auto` 컨테이너 안에서 스크롤. body 가로 스크롤 금지.
-- `<title>` = "{주제} — 5Why 통합분석", favicon 이모지 예: 🐟 (피시본 연상) 또는 🔍.
+**Style rules**
+- Self-contained: all CSS/JS inline, no external requests.
+- Support both light and dark themes (`prefers-color-scheme` + `data-theme`).
+- Responsive: tables/diagrams scroll inside an `overflow-x:auto` container. No horizontal
+  scroll on the body.
+- `<title>` = "{topic} — Integrated 5 Why Analysis"; example favicon emoji: 🐟 (fishbone) or 🔍.
