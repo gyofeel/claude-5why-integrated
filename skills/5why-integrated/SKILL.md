@@ -106,7 +106,11 @@ AskUserQuestion):
 - ⓑ **Interactive HTML** — a web page (Artifact) visualizing the fishbone,
   the FMEA RPN chart, and verification badges
 
-Fill in the matching skeleton from `references/output-templates.md`:
+Fill in the matching skeleton from `references/output-templates.md`, following its
+**writing-style principles** (write in the user's own language, avoid stiff
+literal-translation phrasing, use complete narrative sentences instead of arrow
+chains, add a short friendly intro/lead-in per section) — the output is
+something the user reads and acts on, not a data dump:
 - **ⓐ chosen** → save a `.md` file following the template.
 - **ⓑ chosen** → load the `artifact-design` skill first, then deploy the HTML
   via the Artifact tool.
