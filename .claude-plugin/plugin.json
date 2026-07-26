@@ -1,0 +1,21 @@
+{
+  "name": "5why-integrated",
+  "version": "0.1.0",
+  "description": "Extended integrated 5 Why root cause analysis: 5W2H framing, Fishbone/6M cause expansion, parallel multi-path 5 Whys, FMEA risk prioritization (RPN), and evidence-based verification, producing a Markdown or interactive HTML report.",
+  "author": {
+    "name": "gyofeel"
+  },
+  "homepage": "https://github.com/gyofeel/claude-5why-integrated",
+  "repository": "https://github.com/gyofeel/claude-5why-integrated",
+  "license": "MIT",
+  "keywords": [
+    "5-whys",
+    "root-cause",
+    "fishbone",
+    "fmea",
+    "rpn",
+    "problem-solving",
+    "quality-management",
+    "structured-thinking"
+  ]
+}

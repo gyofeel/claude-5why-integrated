@@ -1,0 +1,21 @@
+{
+  "name": "claude-5why-integrated",
+  "metadata": {
+    "description": "Integrated 5 Why: 5W2H framing → Fishbone/6M → parallel 5 Whys → FMEA/RPN prioritization → evidence verification → Markdown/HTML report."
+  },
+  "owner": {
+    "name": "gyofeel"
+  },
+  "plugins": [
+    {
+      "name": "5why-integrated",
+      "description": "Turn a fuzzy problem into a verified root-cause analysis via 5W2H framing, Fishbone/6M cause expansion, parallel multi-path 5 Whys, FMEA (RPN) prioritization, evidence-based verification, and a chosen Markdown or interactive HTML deliverable.",
+      "author": {
+        "name": "gyofeel"
+      },
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/gyofeel/claude-5why-integrated"
+    }
+  ]
+}
